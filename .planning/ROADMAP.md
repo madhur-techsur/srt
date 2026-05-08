@@ -54,7 +54,10 @@ Plans:
   1. On page load, all previously submitted requests appear in a table with columns: Name, Title, Description
   2. When no requests exist, the table area shows "No requests yet." instead of an empty or broken table
   3. After a successful form submission, the new request appears in the table without a manual page reload
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 03-01-PLAN.md — Implement RequestList.tsx (replace null stub) + Playwright e2e tests for table, empty state, and auto-refresh
 
 ## Progress
 
