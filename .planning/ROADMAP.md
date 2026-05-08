@@ -12,14 +12,14 @@ SRT delivers a single end-to-end capability: a user fills in a form, submits a r
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Backend API & Storage** - Spring Boot REST endpoints, H2 persistence, CORS, and server-side validation
+- [x] **Phase 1: Backend API & Storage** - Spring Boot REST endpoints, H2 persistence, CORS, and server-side validation
 - [ ] **Phase 2: Request Form & Acknowledgment** - React form with client-side validation, POST submission, and inline success/error feedback
 - [ ] **Phase 3: Request List View** - React table displaying all stored requests with empty state and auto-refresh after submission
 
 ## Phase Details
 
 ### Phase 1: Backend API & Storage
-**Status**: In Progress
+**Status**: Complete
 **Goal**: The Spring Boot backend accepts, validates, stores, and returns request data — the API contract is complete and testable independently of the frontend
 **Depends on**: Nothing (first phase)
 **Requirements**: API-01, API-02, API-03, API-04
@@ -31,9 +31,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Maven project scaffold + JPA entity + H2 repository + application config
-- [ ] 01-02-PLAN.md — REST controller (POST/GET) + service + CORS configuration
-- [ ] 01-03-PLAN.md — Service-layer validation + global exception handler + HTTP 400 error body
+- [x] 01-01-PLAN.md — Maven project scaffold + JPA entity + H2 repository + application config
+- [x] 01-02-PLAN.md — REST controller (POST/GET) + service + CORS configuration
+- [x] 01-03-PLAN.md — Service-layer validation + global exception handler + HTTP 400 error body
 
 ### Phase 2: Request Form & Acknowledgment
 **Goal**: A user can fill in the form, submit it, and receive immediate inline feedback — the submission flow works end-to-end with the backend
@@ -66,6 +66,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Backend API & Storage | 0/TBD | Not started | - |
+| 1. Backend API & Storage | 3/3 | ✓ Complete | 2026-05-08 |
 | 2. Request Form & Acknowledgment | 0/TBD | Not started | - |
 | 3. Request List View | 0/TBD | Not started | - |
