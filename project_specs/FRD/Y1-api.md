@@ -10,7 +10,7 @@
 
 ### §POST /api/requests — Create a New Request
 
-**Feature:** F01 (Request Storage), F04 (API Layer)  
+**Feature:** F1 (Request Storage), F4 (API Layer)  
 **Purpose:** Accepts a new request submission from the React frontend, validates it, persists it, and returns the stored record.
 
 **Request:**
@@ -127,7 +127,7 @@ Content-Type: application/json
 
 ### §GET /api/requests — Retrieve All Requests
 
-**Feature:** F02 (Request List View), F04 (API Layer)  
+**Feature:** F2 (Request List View), F4 (API Layer)  
 **Purpose:** Returns all stored request records as a JSON array for display in the frontend table.
 
 **Request:**

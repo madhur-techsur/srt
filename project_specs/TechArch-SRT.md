@@ -37,7 +37,7 @@ SRT uses a **two-tier client-server architecture** with a strict separation betw
 │  │   ┌─────────────────────┐   ┌─────────────────────────┐  │  │
 │  │   │  RequestForm        │   │  RequestList            │  │  │
 │  │   │  Component          │   │  Component              │  │  │
-│  │   │  (F00, F03)         │   │  (F02)                  │  │  │
+│  │   │  (F0, F3)           │   │  (F2)                   │  │  │
 │  │   └──────────┬──────────┘   └──────────┬──────────────┘  │  │
 │  │              │                         │                  │  │
 │  │   ┌──────────▼─────────────────────────▼──────────────┐  │  │
@@ -106,8 +106,8 @@ No containerization, cloud deployment, or reverse proxy is required for demo sco
 src/
 ├── App.tsx                      ← Root component; renders RequestForm + RequestList
 ├── components/
-│   ├── RequestForm.tsx           ← F00 + F03: form inputs, validation, POST call, acknowledgment
-│   └── RequestList.tsx           ← F02: table display, empty state, error state, GET call
+│   ├── RequestForm.tsx           ← F0 + F3: form inputs, validation, POST call, acknowledgment
+│   └── RequestList.tsx           ← F2: table display, empty state, error state, GET call
 ├── api/
 │   └── requestsApi.ts            ← API client: typed fetch wrappers for POST and GET
 └── types/
@@ -117,7 +117,7 @@ src/
 | Component | Responsibility |
 |-----------|---------------|
 | `App` | Layout root; holds shared `requests` state; passes refresh callback to `RequestForm` |
-| `RequestForm` | Renders Name / Title / Description inputs; client-side validation; POSTs on submit; displays acknowledgment (F03) |
+| `RequestForm` | Renders Name / Title / Description inputs; client-side validation; POSTs on submit; displays acknowledgment (F3) |
 | `RequestList` | Fires GET on mount; renders table or empty-state; re-fetches when `refreshTrigger` prop changes |
 | `requestsApi.ts` | Wraps `fetch`; sets `Content-Type: application/json`; parses response; throws typed errors |
 | `request.ts` | Shared `Request`, `CreateRequestPayload`, `ApiError` TypeScript interfaces |
@@ -267,8 +267,8 @@ spring.h2.console.path=/h2-console
 
 | Method | Path | Feature | Purpose |
 |--------|------|---------|---------|
-| `POST` | `/api/requests` | F01, F04 | Create a new request |
-| `GET` | `/api/requests` | F02, F04 | Retrieve all requests |
+| `POST` | `/api/requests` | F1, F4 | Create a new request |
+| `GET` | `/api/requests` | F2, F4 | Retrieve all requests |
 
 ### 4.3 POST /api/requests — Create a New Request
 

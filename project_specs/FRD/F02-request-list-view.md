@@ -1,4 +1,4 @@
-## F02: Request List View
+## F2: Request List View
 
 **Description:** The Request List View is a read-only React table that displays all requests currently stored in the system. It renders one row per request with three visible columns — Name, Title, and Description — and shows an empty-state message when no requests exist. The table refreshes automatically after each successful form submission so the Requester and Viewer always see up-to-date data without a manual page reload.
 
@@ -19,8 +19,8 @@
 - Frontend table with three columns: Name, Title, Description
 - Empty-state message when array is empty
 - Initial data load on component mount
-- Auto-refresh after successful submission (triggered by F00)
-- Loading indicator during fetch (optional but recommended)
+- Auto-refresh after successful submission (triggered by F0)
+- Loading indicator during initial fetch on component mount (optional but recommended; not shown on auto-refresh)
 - Error message if GET request fails
 
 ---
@@ -29,7 +29,7 @@
 
 1. The SRT main page mounts in the browser.
 2. The React component for the Request List View fires a `GET /api/requests` request on component mount.
-3. While the request is in-flight, a loading indicator ("Loading requests…") is optionally displayed.
+3. While the initial request is in-flight, a loading indicator ("Loading requests…") is optionally displayed. This prevents the empty state from flashing before data arrives.
 4. **On HTTP 200 response with a non-empty array:**
    a. Render a `<table>` with header row: **Name | Title | Description**.
    b. Render one `<tr>` per request record, in the order returned by the API (insertion order, most-recent last).
@@ -40,17 +40,18 @@
 6. **On HTTP 500 or network error during GET:**
    a. Render an error message: *"Could not load requests. Please refresh the page."*
    b. Do not render the table.
-7. After a successful form submission (F00 step 9e):
+7. After a successful form submission (F0 step 9e):
    a. Re-issue `GET /api/requests`.
    b. Replace the current table contents with the updated response.
    c. If the list was previously empty, transition from empty state to table view.
+   d. No loading indicator is displayed during this auto-refresh (the refresh is fast on localhost and a loading flash would be disruptive; the current table content remains visible until the new data arrives).
 
 ---
 
 **Inputs:**
 
 - HTTP `GET /api/requests` response (JSON array of request records).
-- Trigger signal from F00 on successful POST (internal React state/callback).
+- Trigger signal from F0 on successful POST (internal React state/callback).
 
 ---
 

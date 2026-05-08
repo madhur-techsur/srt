@@ -8,10 +8,10 @@ This catalog lists all error scenarios across the SRT system, with HTTP status c
 
 | Error Code | HTTP Status | Feature | Trigger Condition | Response Message | Client Guidance |
 |------------|-------------|---------|-------------------|-----------------|-----------------|
-| `VALIDATION_FAILED` | 400 | F01, F04 | One or more of `name`, `title`, `description` are blank/empty after trimming | "One or more fields failed validation." | Display `fieldErrors` array to user; do not reset the form |
-| `INVALID_JSON` | 400 | F04 | Request body is not valid JSON or cannot be deserialized | "Request body could not be parsed." | Check that `Content-Type: application/json` is set and body is well-formed |
-| `UNSUPPORTED_MEDIA_TYPE` | 415 | F04 | `Content-Type` header is not `application/json` on POST | "Content-Type must be application/json." | Set `Content-Type: application/json` header |
-| `INTERNAL_ERROR` | 500 | F01, F04 | Unhandled exception in controller, service, or repository layer | "An unexpected error occurred." | Display generic retry message; do not expose stack trace to client |
+| `VALIDATION_FAILED` | 400 | F1, F4 | One or more of `name`, `title`, `description` are blank/empty after trimming | "One or more fields failed validation." | Display `fieldErrors` array to user; do not reset the form |
+| `INVALID_JSON` | 400 | F4 | Request body is not valid JSON or cannot be deserialized | "Request body could not be parsed." | Check that `Content-Type: application/json` is set and body is well-formed |
+| `UNSUPPORTED_MEDIA_TYPE` | 415 | F4 | `Content-Type` header is not `application/json` on POST | "Content-Type must be application/json." | Set `Content-Type: application/json` header |
+| `INTERNAL_ERROR` | 500 | F1, F4 | Unhandled exception in controller, service, or repository layer | "An unexpected error occurred." | Display generic retry message; do not expose stack trace to client |
 
 ---
 
@@ -19,16 +19,16 @@ This catalog lists all error scenarios across the SRT system, with HTTP status c
 
 | Scenario | Feature | Where Displayed | Message |
 |----------|---------|----------------|---------|
-| Form field empty on submit | F00, F03 | Inline, adjacent to empty field | "This field is required." |
-| POST returns 400 VALIDATION_FAILED | F00, F03 | Acknowledgment area | "Submission failed: [server message]." |
-| POST returns 400 INVALID_JSON | F00, F03 | Acknowledgment area | "Submission failed: Request body could not be parsed." |
-| POST returns 415 | F00, F03 | Acknowledgment area | "Submission failed: [server message]." |
-| POST returns 500 | F00, F03 | Acknowledgment area | "An unexpected error occurred. Please try again." |
-| POST network failure | F00, F03 | Acknowledgment area | "Could not reach server. Check your connection." |
-| GET returns 500 | F02 | Inline below form | "Could not load requests. Please refresh the page." |
-| GET network failure | F02 | Inline below form | "Could not load requests. Please refresh the page." |
-| GET returns empty array | F02 | Table area (empty state) | "No requests yet." |
-| GET returns malformed JSON | F02 | Inline below form | "Could not load requests. Please refresh the page." |
+| Form field empty on submit | F0, F3 | Inline, adjacent to empty field | "This field is required." |
+| POST returns 400 VALIDATION_FAILED | F0, F3 | Acknowledgment area | "Submission failed: [server message]." |
+| POST returns 400 INVALID_JSON | F0, F3 | Acknowledgment area | "Submission failed: Request body could not be parsed." |
+| POST returns 415 | F0, F3 | Acknowledgment area | "Submission failed: [server message]." |
+| POST returns 500 | F0, F3 | Acknowledgment area | "An unexpected error occurred. Please try again." |
+| POST network failure | F0, F3 | Acknowledgment area | "Could not reach server. Check your connection." |
+| GET returns 500 | F2 | Inline below form | "Could not load requests. Please refresh the page." |
+| GET network failure | F2 | Inline below form | "Could not load requests. Please refresh the page." |
+| GET returns empty array | F2 | Table area (empty state) | "No requests yet." |
+| GET returns malformed JSON | F2 | Inline below form | "Could not load requests. Please refresh the page." |
 
 ---
 

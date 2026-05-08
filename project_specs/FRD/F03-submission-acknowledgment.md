@@ -1,4 +1,4 @@
-## F03: Submission Acknowledgment
+## F3: Submission Acknowledgment
 
 **Description:** The Submission Acknowledgment feature provides clear, immediate visual feedback to the Requester after a form submission attempt. It renders an inline success message after a confirmed HTTP 201 response, and an inline error message after a failed submission. No page reload occurs; all feedback is managed through React component state. The acknowledgment is visible long enough for the user to read it and can be dismissed or is cleared before the next submission attempt begins.
 
@@ -29,7 +29,7 @@
 **Process:**
 
 1. On page load: the acknowledgment area is empty (no message displayed).
-2. When the user clicks **Submit** and client-side validation passes (F00 step 7):
+2. When the user clicks **Submit** and client-side validation passes (F0 step 7):
    a. Clear any existing message in the acknowledgment area.
    b. Disable the Submit button while the request is in-flight.
 3. **On HTTP 201 response:**
@@ -55,7 +55,7 @@
 
 **Inputs:**
 
-- HTTP response status and body from `POST /api/requests` (provided by F00).
+- HTTP response status and body from `POST /api/requests` (provided by F0).
 - User click on dismiss button (if implemented).
 - New submission trigger (clears previous acknowledgment).
 
@@ -92,6 +92,6 @@
 
 ---
 
-**API Surface (this feature):** No direct API calls. Consumes response status/body from `POST /api/requests` triggered by F00.
+**API Surface (this feature):** No direct API calls. Consumes response status/body from `POST /api/requests` triggered by F0.
 
 **Schema Surface (this feature):** None. This feature is purely presentational React state.

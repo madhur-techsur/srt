@@ -1,6 +1,6 @@
-## F04: Basic API Layer (Backend REST Contract)
+## F4: Basic API Layer (Backend REST Contract)
 
-**Description:** The Basic API Layer is the Spring Boot REST backend that underpins all data operations in SRT. It exposes two endpoints — `POST /api/requests` and `GET /api/requests` — uses JSON for all request/response bodies, applies correct HTTP status codes, and configures CORS to allow the React frontend development origin. This feature defines the contract that F00, F01, and F02 depend on and enables independent development and testing of frontend and backend.
+**Description:** The Basic API Layer is the Spring Boot REST backend that underpins all data operations in SRT. It exposes two endpoints — `POST /api/requests` and `GET /api/requests` — uses JSON for all request/response bodies, applies correct HTTP status codes, and configures CORS to allow the React frontend development origin. This feature defines the contract that F0, F1, and F2 depend on and enables independent development and testing of frontend and backend.
 
 ---
 
@@ -19,7 +19,7 @@
 
 **Sub-features:**
 
-- `POST /api/requests` — create a new request (see F01 for full behavior)
+- `POST /api/requests` — create a new request (see F1 for full behavior)
 - `GET /api/requests` — retrieve all requests
 - JSON serialization/deserialization for all endpoints
 - CORS policy allowing React dev server (`http://localhost:3000` or `http://localhost:5173`)
@@ -32,7 +32,7 @@
 **Process:**
 
 **POST /api/requests:**
-1. See F01 §Process for the full POST handling flow.
+1. See F1 §Process for the full POST handling flow.
 
 **GET /api/requests:**
 1. Spring Boot controller receives `GET /api/requests`.
@@ -77,7 +77,7 @@
 **Outputs:**
 
 - `POST /api/requests`:
-  - HTTP 201 with created request record JSON (see F01 §Outputs)
+  - HTTP 201 with created request record JSON (see F1 §Outputs)
   - HTTP 400 with error JSON on validation failure or malformed body
   - HTTP 415 on wrong Content-Type
   - HTTP 500 on unexpected error

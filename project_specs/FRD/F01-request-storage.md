@@ -1,4 +1,4 @@
-## F01: Request Storage
+## F1: Request Storage
 
 **Description:** The Request Storage feature is the backend persistence layer for the SRT system. The Spring Boot backend exposes a `POST /api/requests` endpoint that accepts a JSON payload, performs server-side validation, assigns a system-generated unique ID and creation timestamp, persists the record to the H2 in-memory database, and returns the stored record as confirmation. Data persists for the duration of the application session only; no cross-restart durability is required.
 
@@ -116,7 +116,7 @@
 - All three fields must be present in the JSON payload (absent fields treated as blank).
 - Server-side validation is independent of and does not rely on client-side validation.
 - `id` and `createdAt` are server-assigned; any client-provided values for these fields are ignored.
-- No length limits enforced at server for MVP; database column constraints apply (see `Y0-schema.md`).
+- No explicit length validation is performed in the service layer at MVP scope. Effective length limits are enforced by the database column constraints: `name` and `title` are capped at 255 characters, `description` at 1000 characters, by the `VARCHAR` column definitions in `Y0-schema.md`. Any input exceeding these limits will cause a database error (caught by the Global Exception Handler and returned as HTTP 500).
 
 ---
 

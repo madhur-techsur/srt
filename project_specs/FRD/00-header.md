@@ -17,11 +17,11 @@ This document specifies the functional behavior of the Simple Request Tracker (S
 
 ## Conventions
 
-- **Feature IDs** match PRD feature numbering: F0 → `F00`, F1 → `F01`, etc.
+- **Feature IDs** match PRD feature numbering: F0–F4 (consistent across all spec documents).
 - **HTTP status codes** follow RFC 9110 semantics.
 - **Field names** in `code font` match JSON payload keys exactly (camelCase).
 - **Required** fields must be present and non-empty after trimming whitespace.
-- **Cross-references** use the pattern `see F01 §Process` or `see Y1-api.md §Requests`.
+- **Cross-references** use the pattern `see F1 §Process` or `see Y1-api.md §Requests`.
 - All API request/response bodies are `application/json` unless noted.
 - All timestamps are ISO 8601 UTC strings: `"2026-05-08T14:00:00Z"`.
 
@@ -31,11 +31,11 @@ This document specifies the functional behavior of the Simple Request Tracker (S
 
 | Section | File | Description |
 |---------|------|-------------|
-| F00 | `F00-request-submission-form.md` | React form for submitting requests |
-| F01 | `F01-request-storage.md` | Backend persistence of submitted requests |
-| F02 | `F02-request-list-view.md` | Frontend table view of all requests |
-| F03 | `F03-submission-acknowledgment.md` | Visual feedback after form submission |
-| F04 | `F04-api-layer.md` | Full REST API contract and CORS configuration |
+| F0 | `F00-request-submission-form.md` | React form for submitting requests |
+| F1 | `F01-request-storage.md` | Backend persistence of submitted requests |
+| F2 | `F02-request-list-view.md` | Frontend table view of all requests |
+| F3 | `F03-submission-acknowledgment.md` | Visual feedback after form submission |
+| F4 | `F04-api-layer.md` | Full REST API contract and CORS configuration |
 | Y0 | `Y0-schema.md` | Database schema (H2/JPA DDL) |
 | Y1 | `Y1-api.md` | Consolidated REST API endpoint catalog |
 | Y2 | `Y2-errors.md` | Cross-feature error catalog |
