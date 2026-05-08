@@ -1,0 +1,10 @@
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/repository/RequestRepository.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/model/RequestDto.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/SrtApplication.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/model/Request.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/dto/ErrorResponse.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/config/CorsConfig.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/exception/ValidationException.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/exception/GlobalExceptionHandler.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/service/RequestService.java
+/app/workspaces/srt/project-SRT/backend/src/main/java/com/example/srt/controller/RequestController.java
