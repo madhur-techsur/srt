@@ -27,7 +27,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `POST /api/requests` with any blank field returns HTTP 400 with a structured `VALIDATION_FAILED` error body listing the offending fields
   3. `GET /api/requests` returns HTTP 200 with a JSON array of all previously submitted requests (empty array when none exist)
   4. The React dev server origin (`http://localhost:5173`) can call both endpoints without browser CORS errors
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Maven project scaffold + JPA entity + H2 repository + application config
+- [ ] 01-02-PLAN.md — REST controller (POST/GET) + service + CORS configuration
+- [ ] 01-03-PLAN.md — Service-layer validation + global exception handler + HTTP 400 error body
 
 ### Phase 2: Request Form & Acknowledgment
 **Goal**: A user can fill in the form, submit it, and receive immediate inline feedback — the submission flow works end-to-end with the backend
